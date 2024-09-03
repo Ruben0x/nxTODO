@@ -35,11 +35,11 @@ export const createProduct = async (product: Product) => {
     return resp.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
+      alert(error.response?.data.message);
       console.error(
         'Error en la solicitud:',
         error.response?.data || error.message
       );
-      return error.response?.status;
     } else {
       console.error('Error inesperado:', error);
     }

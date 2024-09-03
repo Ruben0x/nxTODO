@@ -1,31 +1,14 @@
-import { useEffect, useState } from 'react';
-import { deleteProduct, getProducts } from '../helpers/fetch';
+import { deleteProduct } from '../helpers/fetch';
+import { Product } from './ProductForm';
 
-interface Product {
-  _id: string;
-  nombre: string;
-  descripcion: string;
-  precio: number;
+interface Props {
+  products: Product[];
 }
-export const ProductList = () => {
-  const [products, setProducts] = useState<Product[]>([]);
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const lista = await getProducts();
-        setProducts(lista);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchProducts();
-  }, []);
-
+export const ProductList = ({ products }: Props) => {
   const handleDelete = (id: string) => {
     try {
       deleteProduct(id);
-      setProducts((prev) => prev.filter((prod) => prod._id !== id));
     } catch (error) {
       console.error(error);
     }
