@@ -11,7 +11,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd nx-nest-react
+  cd nx-TODO
 ```
 
 Install dependencies
@@ -23,7 +23,7 @@ Install dependencies
 Run docker
 
 ```bash
-  docker-compose up -D
+  docker-compose up -d
 ```
 
 Start project's frontend
@@ -36,6 +36,16 @@ Start project's backend
 
 ```bash
   nx serve backend
+```
+
+Run Tests
+
+```bash
+  nx test backend
+```
+
+```bash
+  nx test frontend
 ```
 
 ## Access project
