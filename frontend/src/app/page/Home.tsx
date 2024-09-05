@@ -4,7 +4,7 @@ import { ProductForm } from '../components/ProductForm';
 export const Home = () => {
   return (
     <div>
-      <h1>Welcome</h1>
+      <h1>Tarea Cencosud</h1>
       <ProductForm />
     </div>
   );
